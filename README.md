@@ -21,7 +21,7 @@ computer-vision-evaluation/
 ├── README.md
 │
 ├── notebooks/
-│   └── Computer_Vision_Evaluation_Lab.ipynb
+│   └── Computer_Vision_Evaluation_Lab_f (1).ipynb
 │
 └── requirements.txt
 ```
@@ -52,7 +52,7 @@ The experiments use the following models:
 
 | Task | Model |
 |---|---|
-| Image Classification | Classification model implemented in the notebook |
+| Image Classification | Logistic Regression (with StandardScaler) |
 | Object Detection | YOLO11n |
 | Semantic Segmentation | YOLO11n-seg |
 | Instance Segmentation | YOLO11n-seg |
@@ -127,18 +127,16 @@ The following table summarizes the main results obtained in the notebook.
 
 ### Prerequisites
 
-- Python
+- Python 3
 - Jupyter Notebook or Google Colab
 - Required Python libraries
-- Access to the datasets
 
 ### Installation
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/computer-vision-evaluation.git
-
+git clone https://github.com/BL24-DATA/computer-vision-evaluation.git
 cd computer-vision-evaluation
 ```
 
@@ -150,26 +148,21 @@ pip install -r requirements.txt
 
 ### Run the notebook
 
-Open the notebook using Jupyter:
+The notebook is designed to run in Google Colab.
 
-```bash
-jupyter notebook
-```
+1. Open Google Colab.
+2. Upload the notebook from the `notebooks/` folder.
+3. Execute the cells in order.
+4. The Penn-Fudan dataset is downloaded and prepared by the notebook.
+5. Inspect the evaluation metrics and visualizations.
 
-Alternatively, upload the notebook to Google Colab.
-
-Before running the experiments:
-
-1. Make sure the datasets are available.
-2. Check the dataset paths.
-3. Execute the notebook cells in order.
-4. Inspect the evaluation metrics and visualizations.
+For local Jupyter execution, dataset paths and download commands may need to be adapted.
 
 ## 8. Evaluation Protocol
 
-The detection and instance segmentation experiments include an evaluation inspired by the COCO protocol.
+The object detection and instance segmentation experiments include an evaluation inspired by the COCO protocol.
 
-AP is calculated at ten IoU thresholds, from 0.50 to 0.95, and averaged to obtain the corresponding mAP score.
+AP is calculated across ten IoU thresholds, from 0.50 to 0.95, and averaged to obtain the corresponding mAP score.
 
 The notebook implements a simplified evaluation procedure rather than the complete official COCO evaluation API.
 
@@ -177,11 +170,18 @@ The notebook implements a simplified evaluation procedure rather than the comple
 
 This project demonstrates how evaluation metrics differ according to the Computer Vision task.
 
-Classification evaluates image-level predictions, object detection evaluates bounding boxes, semantic segmentation evaluates pixels, and instance segmentation evaluates individual object masks.
+- Classification evaluates image-level predictions.
+- Object detection evaluates bounding boxes.
+- Semantic segmentation evaluates individual pixels.
+- Instance segmentation evaluates individual object masks.
 
 The experiments highlight the importance of selecting appropriate evaluation metrics to understand model performance and limitations.
 
 ---
+
+**Master Data & AI**
+
+**Project:** Evaluation Metrics for Computer Vision Tasks
 
 **Master Data & AI**  
 **Project:** Evaluation Metrics for Computer Vision Tasks
