@@ -183,5 +183,5 @@ The experiments highlight the importance of selecting appropriate evaluation met
 
 ---
 
-**Course:** Master Data & AI  
+**Master Data & AI**  
 **Project:** Evaluation Metrics for Computer Vision Tasks
